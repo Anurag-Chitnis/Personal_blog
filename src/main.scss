@@ -1,0 +1,816 @@
+//Variables Section
+$color-white: #fff;
+$color-black: #000;
+
+
+//for Header
+$header__overlay: #74b9ff;
+$header__height--phone: 70vh;
+
+//for navigation
+$grey__light--1: #eee;
+
+//card body
+$card-height--desktop: 40rem;
+$card-height--tablet: 45rem;
+$card-height--phone: 55rem;
+$card-heading--desktop: 1rem;
+$card-heading--tablet: 1.7rem;
+$card-heading--phone: 2.4rem;
+$card-para--desktop: 1.6rem;
+$card-para--tablet: 2.5rem;
+$card-para--phone: 3.5rem;
+
+//form __heading
+$form-heading--desktop: 3.5rem;
+$form-heading--tablet: 3rem;
+$form-heading--phone: 5rem;
+
+$form-inputfont--desktop: 1.7rem;
+$form-inputfont--tablet: 2.5rem;
+$form-inputfont--phone: 3.2rem;
+
+$form-button--desktop: 1.6rem;
+$form-button--tablet: 2.8rem;
+$form-button--phone: 3rem;
+
+//Responsive Design Manager
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) {@content}
+  }
+  @if $breakpoint == tab-port {
+    @media screen and (max-width: 900px) {@content}
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 1200px) and (min-width: 901px) {@content}
+  }
+  @if $breakpoint == big-screen {
+    @media (min-width: 1300px) {@content}
+  }
+}
+
+//base of the file
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  @include respond(phone) {
+    font-size: 30%;
+  }
+
+  @include respond(big-screen) {
+    font-size: 80%;
+  }
+
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+//Mixins
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+//Custom Grids
+.row {
+  max-width: 120rem;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: 8rem;
+  }
+
+  @include respond(tab-port) {
+    max-width: 80rem;
+    margin-bottom: 0rem !important;
+  }
+
+  @include clearfix;
+
+  [class^='col'] {
+    float: left;
+    &:not(:last-child) {
+      margin-right: 6rem;
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
+      margin-bottom: 6rem;
+    }
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - 6rem) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 12rem) / 3);
+  }
+}
+
+//Header Starts
+.header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respond(tab-port) {
+    height: 80vh;
+  }
+
+  @include respond(phone) {
+    height: $header__height--phone;
+  }
+
+  &__wrapper {
+    position: relative;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+
+    @include respond(tab-port) {
+      height: 80vh;
+    }
+
+    @include respond(phone) {
+      height: 70vh;
+    }
+  }
+
+    &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: $header__overlay, $alpha: 0.5);
+
+    @include respond(tab-port) {
+      height: 80vh;
+    }
+
+    @include respond(phone) {
+      height: 70vh;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    color: $color-white;
+    font-size: 3.5rem;
+    z-index: 1;
+    text-align: center;
+
+    @include respond(phone) {
+      font-size: 3.8rem;
+    }
+  }
+}
+
+//Navbar Starts
+.navigation {
+    &__checkbox {
+      display: none;
+    }
+
+    &__label {
+      position: fixed;
+      top: 3.5rem;
+      right: 3.5rem;
+      height: 6rem;
+      width: 6rem;
+      background-color: $grey__light--1;
+      z-index: 200;
+      border-radius: 50%;
+      box-shadow: 0 1rem 2rem 0 rgba($color-black,0.1);
+
+      @include respond(tab-port) {
+        height: 8rem;
+        width: 8rem;
+      }
+
+      @include respond(phone) {
+        height: 9rem;
+        width: 9rem;
+      }
+    }
+
+    &__background {
+      position: fixed;
+      top: 4rem;
+      right: 4rem;
+      height: 4rem;
+      width: 4rem;
+      background: radial-gradient(#95A2EF,#0984e3);
+      z-index: 100;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+
+      @include respond(tab-port) {
+        top: 5rem;
+        right: 5rem;
+        height: 6rem;
+        width: 6rem;
+      }
+
+      @include respond(phone) {
+        top: 4rem;
+        right: 4rem;
+        height: 6rem;
+        width: 6rem;
+      }
+    }
+
+    &__navbar {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 300;
+      display: none;
+      visibility: hidden;
+    }
+
+    &__list {
+      list-style-type: none;
+      text-align: center;
+    }
+
+    &__item {
+      margin-bottom: 1rem;
+    }
+
+    &__link {
+      color: $color-white;
+      font-size: 3rem;
+      text-decoration: none;
+
+      @include respond(tab-port) {
+        font-size: 4rem
+      }
+
+      @include respond(phone) {
+        font-size: 5.5rem
+      }
+    }
+
+    &__checkbox:checked ~ &__background {
+        transform: scale(100);
+    }
+
+    &__checkbox:checked ~ &__navbar {
+      display: block;
+      visibility: visible;
+    }
+}
+
+//card
+
+.card {
+  padding: 20rem 3rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__body {
+    height: $card-height--desktop;
+    background-color: #F1F3F5;
+    border-radius: 10px;
+    transition: all .2s ease-in-out;
+    box-shadow: 0px 1rem 1rem 0px rgba(#333,0.1);
+
+    @include respond(tab-port) {
+      height: $card-height--tablet;
+    }
+
+    @include respond(phone) {
+      height: $card-height--phone;
+    }
+  }
+
+  &__image {
+    height: 25rem;
+    background-color: #2595ff;
+    overflow: hidden;
+    @include respond(phone) {
+      height: 30rem;
+    }
+
+    &--1 {
+      height: 100%;
+      background-image: url('images/1.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+
+    &--2{
+      height: 100%;
+      background-image: url('images/2.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+
+    &--3{
+      height: 100%;
+      background-image: url('images/3.png');
+      background-position: center;
+      background-size: cover;
+    }
+
+    &--4{
+      height: 100%;
+      background-image: url('images/4.png');
+      background-position: center;
+      background-size: cover;
+    }
+    &--5{
+      height: 100%;
+      background-image: url('images/1.png');
+      background-position: center;
+      background-size: cover;
+    }
+    &--6{
+      height: 100%;
+      background-image: url('images/2.png');
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  &__content {
+    padding: 2rem 2rem;
+    color: #555;
+    text-decoration: none;
+  }
+
+  &__heading {
+    text-align: center;
+    font-size: $card-heading--desktop;
+    color: #777;
+    margin-bottom: 1rem;
+
+    @include respond(tab-port) {
+      font-size: $card-heading--tablet;
+    }
+
+    @include respond(phone) {
+      font-size: $card-heading--phone;
+    }
+  }
+
+  &__para {
+    font-size: $card-para--desktop;
+    text-align: center;
+    padding: 0 -2rem 0 -2rem;
+
+    @include respond(tab-port) {
+        font-size: $card-para--tablet;
+    }
+    @include respond(phone) {
+        font-size: $card-para--phone;
+        padding: 0 1rem 0 1rem;
+    }
+  }
+
+  &__body:hover {
+    box-shadow: 1px 1rem 1rem .2rem rgba(0,0,0,0.1);
+  }
+}
+
+//footer
+
+.footer {
+  background-color: #333;
+  padding: 5rem 3rem 8rem 3rem;
+
+  &__links {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__box {
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__logo {
+    width: 30rem;
+    height: auto;
+
+    @include respond(tab-port) {
+      width: 40rem;
+    }
+    @include respond(phone) {
+      width: 40rem;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+    display: inline-block;
+  }
+
+  &__items {
+    display: inline;
+    margin-top: 1rem;
+    &:not(:last-child) {
+      margin-right: 6rem;
+    }
+  }
+
+  &__anchor {
+    color: #fff;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  &__content {
+    color: #777;
+    font-size: 1.6rem;
+    width: 70%;
+    text-align: center !important;
+    margin: 0 auto !important;
+
+    @include respond(tab-port) {
+      font-size: 1.8rem;
+      width: 70%;
+    }
+  }
+}
+
+//Form component
+
+.form {
+  .row {
+    min-width: 100%;
+  }
+
+  [class^='col'] {
+    float: left;
+    &:not(:last-child) {
+      margin-right: 0px;
+    }
+  }
+
+  .col-1-of-2 {
+    width: calc((100%)/ 2 );
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
+  }
+
+  &__side--img {
+    // background-image: url('images/1.png');
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    padding: 2rem;
+
+    @include respond(tab-port) {
+      opacity: 0;
+      visibility: collapse;
+      height: 0;
+      width: 0;
+    }
+  }
+
+  &__wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include respond(tab-port) {
+        height: 80vh;
+    }
+  }
+
+  &__heading {
+    text-align: center;
+    font-size: $form-heading--desktop;
+
+    @include respond(tab-port) {
+      font-size: $form-heading--tablet;
+    }
+
+    @include respond(phone) {
+      font-size: $form-heading--phone;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__element {
+    display: block;
+    margin: 2.5rem 0 3rem 0;
+    // padding: 1.4rem 3rem;
+    padding: 1rem;
+    width: 35rem;
+    font-size: $form-inputfont--desktop;
+    border: #fff solid 1px;
+    border-bottom: #333 solid 1px;
+    outline: none;
+
+    @include respond(tab-port) {
+      font-size: $form-inputfont--tablet;
+      width: 50rem;
+      margin: 3.5rem 0 4rem 0;
+    }
+
+    @include respond(phone) {
+      font-size: $form-inputfont--phone;
+      width: 55rem;
+      margin: 6rem 0 6.5rem 0;
+    }
+  }
+
+  .btn {
+    // padding: 1.5rem 4rem;
+    padding: 1rem;
+    color: #fff;
+    background-color: #2595ff;
+    outline: none;
+    border: #2595ff solid 1px;
+    font-size: $form-button--desktop;
+    margin-top: 1rem;
+    text-align: center;
+    margin: 0 auto;
+
+    @include respond(tab-port) {
+      font-size: $form-button--tablet;
+      padding: 1.5rem
+    }
+
+    @include respond(phone) {
+      font-size: $form-button--phone;
+      padding: 1.8rem;
+    }
+  }
+
+  .form__link {
+    font-size: 1.6rem;
+    color: #2595ff;
+    text-decoration: none;
+    margin-top: 2rem;
+
+    @include respond(tab-port) {
+      margin-top: 3rem;
+      font-size: 2.8rem;
+    }
+
+    @include respond(phone) {
+      margin-top: 4rem;
+      font-size: 3.2rem;
+    }
+  }
+
+}
+
+//Follow ME
+
+.follow {
+  background-color: #eee;
+  height: 100vh;
+  width: 100%;
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__links {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    width: 30%;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 2rem .2rem rgba(0,0,0,0.1);
+
+    @include respond(tab-port) {
+        width: 50%;
+        font-size: 2rem;
+    }
+
+    @include respond(phone) {
+      width: 60%;
+      font-size: 2.5rem;
+    }
+
+  }
+
+  &__social {
+    font-size: 2rem;
+    font-weight: 700;
+
+    @include respond(tab-port) {
+      font-size: 2.8rem;
+    }
+    @include respond(phone) {
+      font-size: 4rem;
+    }
+  }
+
+  &__gmail {
+    font-size: 1.7rem;
+  }
+
+}
+
+.creator {
+
+  .row {
+    min-width: 100%;
+  }
+
+  [class^='col'] {
+    float: left;
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+
+  .col-1-of-2 {
+    width: calc(100% /2);
+  }
+
+  &__image {
+    background-image: url('images/myself.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+    @include respond(tab-port) {
+      background-image: url('images/myself.jpg');
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
+    }
+
+    @include respond(phone) {
+      height: 60vh;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+    @include respond(tab-port) {
+      text-align: center;
+      margin-top: 2rem;
+      height: 60vh;
+    }
+  }
+
+  &__heading {
+    color: #282e34;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+
+    @include respond(phone) {
+      font-size: 4rem;
+    }
+  }
+
+  &__para {
+    font-size: 1.6rem;
+    width: 80%;
+
+    @include respond(tab-port) {
+      font-size: 2rem;
+      width: 90%;
+    }
+
+    @include respond(phone) {
+      font-size: 3rem;
+      width: 90%;
+    }
+  }
+
+  .btn {
+    background-color: #2595ff;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    text-decoration: none;
+
+    @include respond(tab-port) {
+      font-size: 2.3rem;
+    }
+
+    @include respond(phone) {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.blog {
+
+  .row {
+    min-width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  [class^='col'] {
+    float: left;
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+
+  .col-1-of-2 {
+    width: calc(100% /2);
+  }
+
+  &__image {
+    background-color: #eee;
+    height: 100vh;
+  }
+
+  &__container {
+    background-color: #FFEF98;
+    height: 100vh;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  &__para {
+    font-size: 1.2rem;
+  }
+
+  &__wrapper {
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+  }
+
+}
