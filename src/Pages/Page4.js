@@ -9,21 +9,24 @@ function PageFour(props) {
         <section className="intro">
           <div className="row">
             <div className="col-1-of-2">
-              <div className="blog__image"></div>
+              <div id="pg4s1" className="blog__image"></div>
             </div>
             <div className="col-1-of-2">
-              <div className="blog__container">
+              <div id="pg4cookie" className="blog__container">
                 <div className="blog__wrapper">
-                  <h2 className='blog__heading'>1: Use Flexbox</h2>
-                  <p className="blog__para">The Best Way and to centralize something is to use Flexbox
-                    Use These lines <br/><br/>
-                  <strong>
-                    display: flex;<br/>
-                    justify-content: center;<br/>
-                    align-items: center;<br/><br/>
-                  </strong>
-                    Use Flex On the Parent of what you want to centralize <br/>
-                  Example: You Want To Center or flex ul (unordered list) , then give above properties to parent of ul
+                  <h2 className='blog__heading'>Cookies</h2>
+                  <p className="blog__para">
+                    Hello, world i am here with a fresh blog, And we are here discussing Cookies
+                    well this are not cookies which you think, these are cookies which store your data,
+                    Well when you visit site and register yourself they ask you do you want browser to remember your password,
+                    when you click OK, Browser stores this information (kind of remembers you),
+                    ,And then you dont have to login again and again, this information is stored in a cookie
+                    But Still what is cookie, its simply info stored in your browser in the form of file called cookie.txt
+                    so that browser can access it when needed, Now lets see what happens exactly , Can cookies be harmful
+                    YES it can be, See cookie is like a wrapper which wraps your email and password which is then send
+                    to the server which can be accessed by a hacker, And can thus access your <strong>session </strong>
+                     Well how to avoid it , Dont allow to remember your password or clear the cookies time
+                    to time,
                   </p>
                 </div>
               </div>
@@ -33,27 +36,22 @@ function PageFour(props) {
         <section className="intro">
           <div className="row">
             <div className="col-1-of-2">
-              <div className="blog__image"></div>
+              <div id='pg4s3' className="blog__image"></div>
             </div>
             <div className="col-1-of-2">
               <div className="blog__container">
                 <div className="blog__wrapper">
-                  <h2 className='blog__heading'>2: Use Absolute Position</h2>
+                  <h2 className='blog__heading'>Session</h2>
                   <p className="blog__para">
-                    When You use position absolute it takes that element and completely takes out of normal flow
-                    of html , Thus be cautious while using position absolute (If You Are A Begginer)
-                    Use These line to center your Element: <br/>
-                    <strong>
-                      position: absolute;<br/>
-                      top: 50%;<br/>
-                      left: 50%;<br/>
-                      transform: translate(-50%,-50%);<br/>
-                    </strong>
-                    Now The Logic is position absolute takes away the normal flow, Then
-                    top 50% means from the reference point you specified from there push it to 50% or by default the top left corner of window
-                    same for the left 50%. Type This code you will see element is not exactly at center because
-                    the point of element ex: h1 tag from which we specify top and left is from top left corner
-                    to centralize things we need center of element that is done by transform property
+                    Well in the last session we heard a word called session, If your are sleeping
+                    then its ok, Well we are anyways going to discuss what a session is,
+                    The activity that a user with a unique IP address spends on a Website during a specified period of time, The number of user sessions on a site is used in measuring the amount of traffic a Web site gets.
+                    Well But how exactly this session gets triggered What is the flow ,
+                    See when we send email and password to the server,server verifies this credentials
+                    and looks for these credentials in Database and verifies it , Then server creates
+                    a temporary user session and issues cookie with and ID, Now anytime user want
+                    to Visit the website he/she doesnt have to give the credentials again they just
+                    have to send the cookie and session will start.
                   </p>
                 </div>
               </div>
@@ -63,20 +61,20 @@ function PageFour(props) {
         <section className="intro">
           <div className="row">
             <div className="col-1-of-2">
-              <div className="blog__image"></div>
+              <div id="pg4s2" className="blog__image"></div>
             </div>
             <div className="col-1-of-2">
               <div className="blog__container">
                 <div className="blog__wrapper">
-                  <h2 className='blog__heading'>3: Use Margin Auto</h2>
+                  <h2 className='blog__heading'>LocalStorage</h2>
                   <p className="blog__para">
-                    If the element is block level element then just type: <br/>
-                    <strong>
-                      margin: 0 auto;<br/>
-                    </strong>
-                    But If the Width: 100%; then it will not work since you are taking
-                    entire width of window what are you centering ,
-                    So control of width is very important
+                    Now we all know what a session and cookie is, Yeah i have left
+                    many things about them but see these blogs will give a overview and
+                    explain concepts in short for complete overview you have to dig a little bit on youtube, Ok lets get back to topic what is LocalStorage
+                    See, its just another Way of stroing data on browser, Well then why not use cookies, Well cookies are very small size(5kB) and the expire too,
+                    LocalStorage doesnt expires and remains life long until you clear it
+                    and also its size is more than cookie (5MB). My blog uses LocalStorage
+                    thus if you have laptop you can play with it.
                   </p>
                 </div>
               </div>
@@ -86,39 +84,20 @@ function PageFour(props) {
         <section className="intro">
           <div className="row">
             <div className="col-1-of-2">
-              <div className="blog__image"></div>
+              <div id='pg4s4' className="blog__image"></div>
             </div>
             <div className="col-1-of-2">
-              <div className="blog__container">
+              <div id="pg4oauth" className="blog__container">
                 <div className="blog__wrapper">
-                  <h2 className='blog__heading'>4: Use Text Align</h2>
+                  <h2 className='blog__heading'>What is Oauth</h2>
                   <p className="blog__para">
-                    Yes Use text-align. See The element You Want To center add <br/>
-                    <strong>
-                      text-align: center;<br/>
-                    </strong>
-                    To its parent Element then add <br/>
-                    <strong>
-                      display: inline-block; <br/>
-                    </strong>
-                    To the element You Want to center
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="intro">
-          <div className="row">
-            <div className="col-1-of-2">
-              <div className="blog__image"></div>
-            </div>
-            <div className="col-1-of-2">
-              <div className="blog__container">
-                <div className="blog__wrapper">
-                  <h2 className='blog__heading'>5: Use Tables</h2>
-                  <p className="blog__para">
-                    Personally, using CSS Table is my least fav for applying vertical alignment. It works in old browsers like Internet Explorer 8. This method is done by setting the container element display to table, while the child element is to be displayed as table-cell then use the vertical-align property to center text vertically.
+                    In this you will understand most of the things discussed till Now Hope Soo ;),
+                    See basically i am talking about SignIn with google or facebook,
+                    Lets say you want to open spotify then you clicked SignIn with facebook then you got redirected to facebook which says do you want spotify to access you account you clicked yes and WOO! you got logged in , But What happended exactly, See when you clicked SignIn at that
+                    time you asked a access grant to facebook. Then you clicked yes to grant access of your facebook account to spotify app, Now facebook
+                    sends code, Which you can use to make a request to have an access token for accessing the protected information, Now facebooks authorization server gives the access token only for the protected information which you asked specifically, Then you send this access token to the resource server, then resource server with the help of
+                    access token identifies you and gives you the protected resources,
+                    In more technical aspect it gives you a BIG object which is stored in LocalStorage or cookies which can be then again sent to the server to start the session
                   </p>
                 </div>
               </div>

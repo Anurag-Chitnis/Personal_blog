@@ -115,7 +115,9 @@ body {
   background-color: #eee;
   z-index: 200;
   border-radius: 50%;
-  box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer; }
   @media screen and (max-width: 900px) {
     .navigation__label {
       height: 8rem;
@@ -174,6 +176,37 @@ body {
 .navigation__checkbox:checked ~ .navigation__navbar {
   display: block;
   visibility: visible; }
+.navigation__span {
+  position: relative;
+  margin-top: 3rem; }
+  @media screen and (max-width: 900px) {
+    .navigation__span {
+      margin-top: 4rem; } }
+  @media (max-width: 600px) {
+    .navigation__span {
+      margin-top: 4.5rem; } }
+  .navigation__span, .navigation__span::before, .navigation__span::after {
+    width: 3rem;
+    height: 2px;
+    display: inline-block;
+    background-color: #333;
+    transition: all 0.2s; }
+  .navigation__span::after, .navigation__span::before {
+    content: '';
+    position: absolute;
+    left: 0; }
+  .navigation__span::before {
+    top: -0.8rem; }
+  .navigation__span::after {
+    top: 0.8rem; }
+.navigation__checkbox:checked ~ .navigation__label .navigation__span {
+  background-color: transparent; }
+.navigation__checkbox:checked ~ .navigation__label .navigation__span::before {
+  top: 0;
+  transform: rotate(45deg); }
+.navigation__checkbox:checked ~ .navigation__label .navigation__span::after {
+  top: 0;
+  transform: rotate(-45deg); }
 
 .card {
   padding: 20rem 3rem; }
@@ -516,8 +549,14 @@ body {
 .blog .col-1-of-2 {
   width: calc(100% /2); }
 .blog__image {
-  background-color: #eee;
-  height: 100vh; }
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat; }
+  @media (max-width: 600px) {
+    .blog__image {
+      height: 70vh; } }
 .blog__container {
   background-color: #FFEF98;
   height: 100vh;
@@ -526,14 +565,121 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; }
+@media (max-width: 600px) {
+  .blog #pg1http {
+    height: 110vh; }
+  .blog #pg3cache {
+    height: 120vh; }
+  .blog #pg4cookie {
+    height: 110vh; }
+  .blog #pg4oauth {
+    height: 120vh; } }
 .blog__heading {
   font-size: 2.5rem;
   margin-bottom: 2rem; }
+  @media screen and (max-width: 900px) {
+    .blog__heading {
+      font-size: 3.5rem; } }
+  @media (max-width: 600px) {
+    .blog__heading {
+      font-size: 5rem; } }
+.blog__img {
+  min-width: 100%;
+  height: 100vh; }
 .blog__para {
-  font-size: 1.2rem; }
+  font-size: 1.4rem; }
+  @media screen and (max-width: 900px) {
+    .blog__para {
+      font-size: 2rem; } }
+  @media (max-width: 600px) {
+    .blog__para {
+      font-size: 3rem; } }
 .blog__wrapper {
   width: 80%;
   text-align: left;
   margin: 0 auto; }
+.blog__content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2595ff;
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center; }
+.blog__heading--sub {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-align: center; }
+  @media screen and (max-width: 900px) {
+    .blog__heading--sub {
+      font-size: 4rem; } }
+  @media (max-width: 600px) {
+    .blog__heading--sub {
+      font-size: 4rem; } }
+.blog__list {
+  list-style-type: none; }
+.blog__item {
+  font-size: 2rem; }
+  @media screen and (max-width: 900px) {
+    .blog__item {
+      font-size: 3rem; } }
+  @media (max-width: 600px) {
+    .blog__item {
+      font-size: 3.5rem; } }
+.blog #pg1s1 {
+  background-image: url("images/internet.svg"); }
+.blog #pg1s2 {
+  background-image: url("images/search.svg"); }
+.blog #pg1s3 {
+  background-image: url("images/request.svg"); }
+.blog #pg1s4 {
+  background-image: url("images/ip.jpg"); }
+.blog #pg1s5 {
+  background-image: url("images/server.svg"); }
+.blog #pg1s6 {
+  background-image: url("images/checklist.svg"); }
+.blog #pg1s7 {
+  background-image: url("images/packet.svg"); }
+.blog #pg1s8 {
+  background-image: url("images/seo.svg"); }
+.blog #pg3s1 {
+  background-image: url("images/3.jpg");
+  background-size: cover; }
+.blog #pg3s2 {
+  background-image: url("images/Ram.jpg"); }
+.blog #pg3s3 {
+  background-image: url("images/proc.jpg");
+  background-size: cover; }
+.blog #pg3s4 {
+  background-image: url("images/cache.svg"); }
+.blog #pg4s1 {
+  background-image: url("images/cookies.svg"); }
+.blog #pg4s3 {
+  background-image: url("images/server.svg"); }
+.blog #pg4s2 {
+  background-image: url("images/localhost.svg"); }
+.blog #pg4s4 {
+  background-image: url("images/jwt.svg"); }
+.blog #pg5s1 {
+  background-image: url("images/work.png");
+  background-size: cover; }
+.blog #pg5s2 {
+  background-image: url("images/interpreter.svg"); }
+.blog #pg5s3 {
+  background-image: url("images/server.svg"); }
+.blog #pg5s4 {
+  background-image: url("images/callstack.png"); }
+.blog #pg6s1 {
+  background-image: url("images/alert.svg"); }
+.blog #pg6s2 {
+  background-image: url("images/firmware.svg"); }
+.blog #pg6s3 {
+  background-image: url("images/alert.svg"); }
+.blog #pg6s4 {
+  background-image: url("images/notify.svg"); }
+.blog #pg6s5 {
+  background-image: url("images/request.svg"); }
 
 /*# sourceMappingURL=main.css.map */

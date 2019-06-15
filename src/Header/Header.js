@@ -9,7 +9,7 @@ class Header extends React.Component {
         </div>
         <div className="header__overlay"></div>
         <div className="header__content">
-          <h1>Hello Everyone</h1>
+          <h1>Hello,World</h1>
         </div>
       </header>
     );

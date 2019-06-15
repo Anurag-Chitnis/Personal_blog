@@ -5,18 +5,31 @@ var firebase = require('firebase');
 var swal = require('sweetalert');
 
 class Navbar extends React.Component {
+  _isMounted = false;
   logout(){
     firebase.auth().signOut().then(()=>{
       swal('Thank You','See  You Soon','success');
       localStorage.clear();
-      this.props.booleanFunction(false);
+      this.setState({logoutClick: true},function() {
+        this.props.booleanFunction(true);
+      })
     });
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
   }
 
   constructor(props){
     super(props);
 
-    this.state = {};
+    this.state = {
+      logoutClick: false,
+    };
     this.logout = this.logout.bind(this);
   }
 
@@ -24,7 +37,7 @@ class Navbar extends React.Component {
     var Navlink1;
     var Navlink2;
     if(this.props.appState) {
-      Navlink1 = <li className="navigation__item"><Link onClick={this.logout} className="navigation__link">Logout</Link></li>;
+      Navlink1 = <li className="navigation__item"><Link to="/login" onClick={this.logout} className="navigation__link">Logout</Link></li>;
     }else {
       Navlink1 = <li className="navigation__item"><Link to="/login" className="navigation__link">Login</Link></li>
       Navlink2 = <li className="navigation__item"><Link to="/signup" className="navigation__link">SignUp</Link></li>

@@ -181,7 +181,6 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba($color: $header__overlay, $alpha: 0.5);
-
     @include respond(tab-port) {
       height: 80vh;
     }
@@ -220,6 +219,8 @@ body {
       z-index: 200;
       border-radius: 50%;
       box-shadow: 0 1rem 2rem 0 rgba($color-black,0.1);
+      text-align: center;
+      cursor: pointer;
 
       @include respond(tab-port) {
         height: 8rem;
@@ -298,6 +299,47 @@ body {
     &__checkbox:checked ~ &__navbar {
       display: block;
       visibility: visible;
+    }
+
+    &__span {
+      position: relative;
+      margin-top: 3rem;
+      @include respond(tab-port) {
+        margin-top: 4rem;
+      }
+      @include respond(phone) {
+        margin-top: 4.5rem;
+      }
+      &,
+      &::before,
+      &::after {
+        width: 3rem;
+        height: 2px;
+        display: inline-block;
+        background-color: #333;
+        transition: all 0.2s;
+      }
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+      }
+      &::before {top: -0.8rem;}
+      &::after {top: 0.8rem;}
+    }
+
+    &__checkbox:checked ~ &__label &__span {
+      background-color: transparent;
+    }
+    &__checkbox:checked ~ &__label &__span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    &__checkbox:checked ~ &__label &__span::after {
+      top: 0;
+      transform: rotate(-45deg);
     }
 }
 
@@ -784,8 +826,15 @@ body {
   }
 
   &__image {
-    background-color: #eee;
     height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include respond(phone) {
+      height: 70vh;
+    }
   }
 
   &__container {
@@ -797,20 +846,176 @@ body {
     justify-content: center;
     align-items: center;
   }
+  @include respond(phone) {
+    #pg1http {
+      height: 110vh;
+    }
+    #pg3cache {
+      height: 120vh;
+    }
+    #pg4cookie {
+      height: 110vh;
+    }
+    #pg4oauth {
+      height: 120vh;
+    }
+  }
 
   &__heading {
     font-size: 2.5rem;
     margin-bottom: 2rem;
+
+    @include respond(tab-port) {
+      font-size: 3.5rem;
+    }
+    @include respond(phone) {
+      font-size: 5rem;
+    }
+  }
+
+  &__img {
+    min-width: 100%;
+    height: 100vh;
   }
 
   &__para {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+
+    @include respond(tab-port) {
+      font-size: 2rem;
+    }
+
+    @include respond(phone) {
+      font-size: 3rem;
+    }
   }
 
   &__wrapper {
     width: 80%;
     text-align: left;
     margin: 0 auto;
+  }
+
+  &__content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2595ff;
+    color: #fff;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  &__heading--sub {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    @include respond(tab-port) {
+      font-size: 4rem;
+    }
+    @include respond(phone) {
+      font-size: 4rem;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    font-size: 2rem;
+    @include respond(tab-port) {
+      font-size: 3rem;
+    }
+    @include respond(phone) {
+      font-size: 3.5rem;
+    }
+  }
+
+
+  #pg1s1 {
+    background-image: url('images/internet.svg');
+  }
+  #pg1s2 {
+    background-image: url('images/search.svg');
+  }
+  #pg1s3 {
+    background-image: url('images/request.svg');
+  }
+
+  #pg1s4 {
+    background-image: url('images/ip.jpg');
+  }
+  #pg1s5 {
+    background-image: url('images/server.svg');
+  }
+  #pg1s6 {
+    background-image: url('images/checklist.svg');
+  }
+  #pg1s7 {
+    background-image: url('images/packet.svg');
+  }
+  #pg1s8 {
+    background-image: url('images/seo.svg');
+  }
+
+  #pg3s1 {
+    background-image: url('images/3.jpg');
+    background-size: cover;
+  }
+  #pg3s2 {
+    background-image: url('images/Ram.jpg');
+  }
+
+  #pg3s3 {
+    background-image: url('images/proc.jpg');
+    background-size: cover;
+  }
+  #pg3s4 {
+    background-image: url('images/cache.svg');
+  }
+  #pg4s1 {
+    background-image: url('images/cookies.svg');
+  }
+  #pg4s3 {
+    background-image: url('images/server.svg');
+  }
+  #pg4s2 {
+    background-image: url('images/localhost.svg');
+  }
+  #pg4s4 {
+    background-image: url('images/jwt.svg');
+  }
+
+  #pg5s1 {
+    background-image: url('images/work.png');
+    background-size: cover;
+  }
+  #pg5s2 {
+    background-image: url('images/interpreter.svg');
+  }
+  #pg5s3 {
+    background-image: url('images/server.svg');
+  }
+  #pg5s4 {
+    background-image: url('images/callstack.png');
+  }
+  #pg6s1 {
+    background-image: url('images/alert.svg');
+  }
+  #pg6s2 {
+    background-image: url('images/firmware.svg');
+  }
+  #pg6s3 {
+    background-image: url('images/alert.svg');
+  }
+  #pg6s4 {
+    background-image: url('images/notify.svg');
+  }
+  #pg6s5 {
+    background-image: url('images/request.svg');
   }
 
 }

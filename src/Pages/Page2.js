@@ -10,7 +10,16 @@ class PageTwo extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div id="pg2s1" className="blog__content">
+                    <h2 className="blog__heading--sub">Index</h2>
+                    <ul className='blog__list'>
+                      <li className="blog__item">Virtual Memory</li>
+                      <li className="blog__item">Page And Page Frames</li>
+                      <li className="blog__item">Hit And Page Fault</li>
+                      <li className="blog__item">Page Replacement</li>
+                      <li className="blog__item">Dirty Page</li>
+                    </ul>
+                </div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
@@ -30,7 +39,14 @@ class PageTwo extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div className="blog__content">
+                  <h2 className="blog__heading--sub">Points From virtual Memory</h2>
+                  <ul className='blog__list'>
+                    <li className="blog__item">64TB Storage</li>
+                    <li className="blog__item">Consists of pages</li>
+                    <li className="blog__item">Pages load in RAM</li>
+                  </ul>
+                </div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
@@ -50,7 +66,15 @@ class PageTwo extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div className="blog__content">
+                  <h2 className="blog__heading--sub">Points From Page Frame</h2>
+                  <ul className='blog__list'>
+                    <li className="blog__item">Page is divided in page frame</li>
+                    <li className="blog__item">Page load in page frame</li>
+                    <li className="blog__item">Size of page is 4KB</li>
+                    <li className="blog__item">4096 locations in page</li>
+                  </ul>
+                </div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
@@ -74,7 +98,14 @@ class PageTwo extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div className="blog__content">
+                  <h2 className="blog__heading--sub">Points From Hit/Miss</h2>
+                  <ul className='blog__list'>
+                    <li className="blog__item">Available in RAM (Hit)</li>
+                    <li className="blog__item">Not Available in RAM (Miss)</li>
+                    <li className="blog__item">95% Hit Ratio</li>
+                  </ul>
+                </div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
@@ -96,7 +127,13 @@ class PageTwo extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div className="blog__content">
+                  <h2 className="blog__heading--sub">Points From Page Replacement</h2>
+                  <ul className='blog__list'>
+                    <li className="blog__item">First In First Out policy</li>
+                    <li className="blog__item">Least Use Replacement</li>
+                  </ul>
+                </div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">

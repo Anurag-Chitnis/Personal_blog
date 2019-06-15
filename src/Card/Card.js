@@ -67,10 +67,10 @@ class Card extends React.Component {
                 </div>
                   <div className="card__content">
                   <div className="card__heading">
-                    <h2 className="heading__primary">Tips For HTML Centering</h2>
+                    <h2 className="heading__primary">Authentication On Web</h2>
                   </div>
                   <div className="card__para">
-                    <p>Best 5 methods to center any content with css</p>
+                    <p>We will dicuss sessions jwt and more</p>
                   </div>
                 </div>
               </div>
@@ -87,7 +87,7 @@ class Card extends React.Component {
                     <h2 className="heading__primary">How Js Code Runs</h2>
                   </div>
                   <div className="card__para">
-                    <p>In this we will talk about heap , callstack , Eventloop , And Web Api</p>
+                    <p>In this we will talk about Woking of js on base level</p>
                   </div>
                 </div>
               </div>
@@ -101,10 +101,10 @@ class Card extends React.Component {
                 </div>
                   <div className="card__content">
                   <div className="card__heading">
-                    <h2 className="heading__primary">This Keyword</h2>
+                    <h2 className="heading__primary">Internet Terminologies</h2>
                   </div>
                   <div className="card__para">
-                    <p>We Will understand how this keyword behaves in various scopes</p>
+                    <p>We Will understand some popular Internet terms</p>
                   </div>
                 </div>
               </div>

@@ -9,7 +9,7 @@ function PageThree(props) {
         <section className="intro">
           <div className="row">
             <div className="col-1-of-2">
-              <div className="blog__image"></div>
+              <div id="pg3s1" className="blog__image"></div>
             </div>
             <div className="col-1-of-2">
               <div className="blog__container">
@@ -30,7 +30,7 @@ function PageThree(props) {
         <section className="intro">
           <div className="row">
             <div className="col-1-of-2">
-              <div className="blog__image"></div>
+              <div id='pg3s2' className="blog__image"></div>
             </div>
             <div className="col-1-of-2">
               <div className="blog__container">
@@ -50,7 +50,7 @@ function PageThree(props) {
         <section className="intro">
           <div className="row">
             <div className="col-1-of-2">
-              <div className="blog__image"></div>
+              <div id='pg3s3' className="blog__image"></div>
             </div>
             <div className="col-1-of-2">
               <div className="blog__container">
@@ -58,8 +58,8 @@ function PageThree(props) {
                   <h2 className='blog__heading'>Little bit about paging</h2>
                   <p className="blog__para">
                     Now everything is proccessed in proccessor, if proccessor wants something it will first ask RAM (FOR NOW) if it is not present in RAM
-                    it will ask hard disk. Now suppose you want to play a movie that is of 4k quality and lets say its of size 10GB now how can a movie be played on 8GB RAM as i told early everything runs on RAM.
-                    Now a entire 10GB movie is not loaded in RAM small parts of it are loaded in RAM this small parts are called pages this pages come from virtual memory which is diffrent topic i have disccussed in a blog
+                    it will ask Virtual memory. Now suppose you want to play a movie that is of 4k quality and lets say its of size 10GB now how can a movie be played on 8GB RAM as i told early everything runs on RAM.
+                    Now a entire 10GB movie is not loaded in RAM small parts of it are loaded in RAM this small parts are called pages this pages come from virtual memory.So in Short pages load from virtula memory to RAM in page frames. Ok lets move forward
                   </p>
                 </div>
               </div>
@@ -69,13 +69,21 @@ function PageThree(props) {
         <section className="intro">
           <div className="row">
             <div className="col-1-of-2">
-              <div className="blog__image"></div>
+              <div id='pg3s4' className="blog__image"></div>
             </div>
             <div className="col-1-of-2">
-              <div className="blog__container">
+              <div id="pg3cache" className="blog__container">
                 <div className="blog__wrapper">
                   <h2 className='blog__heading'>Cache memory</h2>
-                  <p className="blog__para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum et veritatis deleniti fugiat modi. Fugiat sed vel quo nihil nobis. Ab vel odit tenetur ipsa modi dolorum aliquid sequi optio?</p>
+                  <p className="blog__para">
+                    Now to understand cache lets understand one analogy. lets say i gave you one book are you going to read entire book or one page, At this very moment are you still going to read entire page or a word at a time. Thats the memory<br/>
+                    Virtual memory is the book. RAM hold one page and litterally page of paging topic, And the page location which you are going to use right
+                    now are words in the page. <br/>
+                    That was a AHHA! moment for me when i knew it.Now there are L1,L2,L3
+                    cache in memory....Why?....80386 came up with the idea of caching But
+                    they realized that we are not able to access the full potential of the
+                    processor and that was beacause of BUS, computer BUS which is responsible for transferring data , Now the problem was BUS operate at speed of 833MHz and processor operates at 1.6GHz and that was the gap so the Bus on which data travels is basically very slow and cant cope up the speed. Thus they came up with pentium processor with a solution of putting cache inside processor which is known as L1 and L2 cache.
+                  </p>
                 </div>
               </div>
             </div>

@@ -10,7 +10,7 @@ class PageOne extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div id="pg1s1" className="blog__image"></div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
@@ -25,7 +25,7 @@ class PageOne extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div id="pg1s2" className="blog__image"></div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
@@ -42,10 +42,10 @@ class PageOne extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div id="pg1s3" className="blog__image"></div>
               </div>
               <div className="col-1-of-2">
-                <div className="blog__container">
+                <div id="pg1http" className="blog__container">
                   <div className="blog__wrapper">
                     <h2 className='blog__heading'>HTTP Request </h2>
                     <p className="blog__para">If you have heard of AJAX or Promises or  have programmed in js you already know what is Request.
@@ -59,7 +59,7 @@ class PageOne extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div id="pg1s4" className="blog__image"></div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
@@ -76,7 +76,7 @@ class PageOne extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div id="pg1s5" className="blog__image"></div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
@@ -91,7 +91,7 @@ class PageOne extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div id="pg1s6" className="blog__image"></div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
@@ -108,7 +108,7 @@ class PageOne extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div id="pg1s7" className="blog__image"></div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
@@ -124,7 +124,7 @@ class PageOne extends React.Component {
           <section className="intro">
             <div className="row">
               <div className="col-1-of-2">
-                <div className="blog__image"></div>
+                <div id="pg1s8" className="blog__image"></div>
               </div>
               <div className="col-1-of-2">
                 <div className="blog__container">
